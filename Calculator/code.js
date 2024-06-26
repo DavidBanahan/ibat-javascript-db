@@ -6,7 +6,7 @@ let calculationDisplay = document.getElementById('calculation');
 let currentInput = '';
 let operator = null;
 let previousInput = '';
-let lastInput = ''; // Track the last input type (number, operator, etc.)
+let lastInput = '';
 
 // Function to append a number to the current input and update the display
 function appendNumber(number) {
@@ -21,7 +21,7 @@ function appendNumber(number) {
     lastInput = 'number'; // Update last input type to number
 }
 
-// Function to handle operator buttons (+, -, *, /)
+// Function to handle operator buttons
 function appendOperator(op) {
     // If both inputs are empty, do nothing
     if (currentInput === '' && previousInput === '') return;
@@ -104,9 +104,9 @@ function calculate() {
     currentInput = result.toString();
     operator = null;
     previousInput = '';
-    display.innerText = result; // Show the result on the display
-    calculationDisplay.innerText = ''; // Clear the calculation display
-    lastInput = 'number'; // Update last input type to number
+    display.innerText = result;
+    calculationDisplay.innerText = '';
+    lastInput = 'number';
 }
 
 // Ensure the display elements are obtained after the DOM is loaded
